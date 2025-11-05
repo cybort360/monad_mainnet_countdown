@@ -12,7 +12,6 @@ const progressBar = document.getElementById('progressBar');
 const localTarget = new Date(targetUTC);
 localTime.textContent = `Local target: ${localTarget.toString()}`;
 
-// progress bar baseline: from now -> target; but we need a start anchor. Use "now" as baseline capture when page opened.
 const pageLoadedAt = Date.now();
 const totalSpan = Math.max(1, targetUTC - pageLoadedAt);
 
@@ -58,7 +57,6 @@ function update() {
 const timer = setInterval(update, 250);
 update();
 
-// simple confetti engine (canvas) — minimal, no libs
 const confettiCanvas = document.getElementById('confetti');
 const ctx = confettiCanvas.getContext && confettiCanvas.getContext('2d');
 let confettiItems = [];
@@ -131,9 +129,6 @@ document.getElementById('toggleFormat').addEventListener('click', () => {
 
 document.getElementById('resetBtn').addEventListener('click', () => {
   statusText.textContent = 'Recalculating...';
-  // no-op: update runs continuously. But refresh progress baseline
-  // (not reloading page to preserve user's context)
-  // eslint-disable-next-line no-self-assign
   progressBar.style.width = progressBar.style.width;
   setTimeout(
     () =>
