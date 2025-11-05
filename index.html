@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Monad Mainnet Countdown — 24 Nov 2025, 14:00 UTC</title>
+    <meta name="description" content="Countdown to 24 November 2025, 14:00 UTC — built for vibes." />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="card" role="region" aria-label="Countdown to 24 November 2025 14:00 UTC">
+      <canvas id="confetti" aria-hidden="true"></canvas>
+      <header>
+        <div class="title">
+          <h1>Monad Mainnet Countdown</h1>
+          <p class="lead">Target: <strong>24 November 2025, 14:00:00 UTC</strong></p>
+        </div>
+        <div class="meta" aria-hidden="false">
+          <small id="localTime">Local target: —</small>
+        </div>
+      </header>
+
+      <section class="countdown" aria-live="polite" id="countdown">
+        <div class="unit">
+          <div class="value" id="days">0</div>
+          <div class="label">Days</div>
+        </div>
+        <div class="unit">
+          <div class="value" id="hours">0</div>
+          <div class="label">Hours</div>
+        </div>
+        <div class="unit">
+          <div class="value" id="minutes">0</div>
+          <div class="label">Minutes</div>
+        </div>
+        <div class="unit">
+          <div class="value" id="seconds">0</div>
+          <div class="label">Seconds</div>
+        </div>
+      </section>
+
+      <div class="progress-wrap">
+        <div class="bar" aria-hidden="true"><i id="progressBar"></i></div>
+      </div>
+
+      <div class="controls">
+        <button id="copyBtn">Copy share link</button>
+        <button id="toggleFormat">Toggle compact view</button>
+        <button id="resetBtn">Reset (recalculate)</button>
+      </div>
+
+      <div class="small-note" id="statusText">
+        Counting down to the big moment. Your browser's clock is used — make sure it's accurate.
+      </div>
+    </div>
+
+    <script src="monad.js"></script>
+  </body>
+</html>
